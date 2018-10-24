@@ -31,23 +31,12 @@ int main() {
     cin >> filename;
     file.open(filename);
     while (file >> command){ 
-      //cout << command ;
       vCommands.push_back(command);
       if ((command != "pop") && (command != "serve")){      file >> dataNumbers;
-          //vCommands.push_back(command);
           vNumbers.push_back(dataNumbers);
-          //cout << " " << dataNumbers;
       }
-      //cout << endl;
-     //cout << vCommands.size() << endl;
     }
      cout << "Operation" << " Stack" << " Value" << " Result" << endl;
-    /*for (int i=0; i<vCommands.size();i++){
-    cout << vCommands[i] << endl;
-    }
-    for (int i=0; i<vNumbers.size();i++){
-    cout << vNumbers[i] << endl;
-    }*/
 
     int n=0;
     for (int c = 0; c < vCommands.size(); ++c){
@@ -66,7 +55,6 @@ int main() {
       else if (vCommands.at(c) == "serve"){
         if (queue.empty()) {
           cout << "serve" << "\tqueue " << "\t--" << "\toverflow" << endl;
-        //queue.serve();
         }
         else {
         cout << "serve" << "\tqueue " << "\t--" << "\tsucccess" << endl;
